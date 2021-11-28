@@ -1,0 +1,11 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="page-header">
+    <h1>
+        <a href="{% url 'equipement_detail' id_equip=equipement.id_equip %}">{{ equipement.id_equip }}</a>
+    </h1>
+</div>
+ 
+{% endblock %}

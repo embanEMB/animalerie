@@ -1,0 +1,28 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+<div class="page-header_detail">
+    <h1>
+        <center><b href="/"><img src="{{animal.photo}}" width="130" height="100"/></b></center>
+        <br>
+        <center><e href="/">{{ animal.id_animal }} est dans : {{ lieu }}. Il est {{ animal.etat }}.</e></center>
+        
+    </h1>
+</div>
+<div class="page-header_detail2">
+    <form method="POST" class="post-form" >{% csrf_token %}
+        Changer : {{ form.as_ul }}
+        <!-- <a class="waves-effect waves-light btn">button</a> -->
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <button type="submit" class="btn btn-outline-light">OK</button>
+        <a href="{% url 'animal_list' %}">Retour</a>
+    </form>
+</div>
+
+    {% if message != ''%}
+        <div class="alert alert-danger" role="alert">
+            {{message}}
+        </div>
+    {% endif %}
+ 
+{% endblock %}

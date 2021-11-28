@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="col-md-4">
+    {% for equipement in equipements %}
+        <div class="container">
+            <h2><a href="{% url 'equipement_detail' id_equip=equipement.id_equip %}">{{ equipement.id_equip }}</a></h2>
+            <p>{{ equipement.id_equip|linebreaksbr }}</p>
+            <p>{{ equipement.disponibilite|linebreaksbr }}</p>
+            <p>{{ equipement.photo|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+</div>
+{%endblock %}
